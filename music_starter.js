@@ -5,9 +5,17 @@ let bgCol
 let Green = [108, 148, 87];
 let Black = [0, 0, 0];
 let lerpAMT = (1)
-
+let firstRun = true;
+let myImage;
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
+
+  if(firstRun){
+    myImage = loadImage('Zombie for DSDN 142 Code.png')
+    firstRun = false;
+  }
+  image(myImage, 0,0);
+
   lerpAMT = map(other, 0, 100, 1,0)
   let changingColor = lerpColor (color(Green), color(Black), lerpAMT)
   background(108, 123, bgCol)
