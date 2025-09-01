@@ -31,10 +31,9 @@ bgCol = map(bass,0, 100,100, 255)
 
   fill(changingColor); // changes from Green to Black
 
-
-
-let slowCounter =counter / 60
-let whichZomFrame= int(slowCounter %4);
+//ZWave = map (bass)
+//let slowbass = ZWave (bass / 60)
+let whichZomFrame= int( map(drum, 0,100,0,4));
 
 console.log(whichZomFrame)
 image(ZWave[whichZomFrame], 0,0); //ZWave animation
