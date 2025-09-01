@@ -6,15 +6,22 @@ let Green = [108, 148, 87];
 let Black = [0, 0, 0];
 let lerpAMT = (1)
 let firstRun = true;
-let myImage;
+let scene;
+let ZWave = [];
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
   if(firstRun){
-    myImage = loadImage('Zombie for DSDN 142 Code.png')
-    firstRun = false;
+   scene = loadImage('ZWave/ZWave.1.png')
+
+  ZWave.push(loadImage('ZWave/ZWave.1.png'))
+   ZWave.push(loadImage('ZWave/ZWave.2.png'))
+    ZWave.push(loadImage('ZWave/ZWave.3.png'))
+     ZWave.push(loadImage('ZWave/ZWave.4.png'))
+   firstRun = false;
+    
   }
-  image(myImage, 0,0);
+  
 
   lerpAMT = map(other, 0, 100, 1,0)
   let changingColor = lerpColor (color(Green), color(Black), lerpAMT)
@@ -23,7 +30,16 @@ sunSize = map(drum, 0, 300,50, 300)
 bgCol = map(bass,0, 100,100, 255)
 
   fill(changingColor); // changes from Green to Black
- 
+
+
+
+let slowCounter =counter / 60
+let whichZomFrame= int(slowCounter %4);
+
+console.log(whichZomFrame)
+image(ZWave[whichZomFrame], 0,0); //ZWave animation
+
+
 for(var i=1; i < 6; i++){
   var circlestep = i*240;
   ellipse(circlestep,sunY,sunSize)
@@ -33,7 +49,7 @@ if(sunY > 1000){
 sunY = 0
 
 }
-console.log(sunY)
+//console.log(sunY)
 }
 }
   
