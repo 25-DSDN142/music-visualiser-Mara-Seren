@@ -8,6 +8,10 @@ let lerpAMT = (1)
 let firstRun = true;
 let scene;
 let ZWave = [];
+
+//const myElement = document.getElementById('ellipse');
+
+
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
 
@@ -21,29 +25,45 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    firstRun = false;
     
   }
-  
+ 
 
-  lerpAMT = map(other, 0, 100, 1,0)
-  let changingColor = lerpColor (color(Green), color(Black), lerpAMT)
-  background(108, 123, bgCol)
-sunSize = map(drum, 0, 300,50, 300)
-bgCol = map(bass,0, 100,100, 255)
+lerpAMT = map(other, 0, 100, 1,0)
+let changingColor = lerpColor (color(Green), color(Black), lerpAMT,)//Circle colours
 
+  background(108, 123, bgCol)//Background colour
+ 
+sunSize = map(drum, 0, 400,40, 200)
+
+bgCol = map(bass,0, 100,100, 255)//Background colour
+ 
   fill(changingColor); // changes from Green to Black
 
 //ZWave = map (bass)
 //let slowbass = ZWave (bass / 60)
-let whichZomFrame= int( map(drum, 0,100,0,4));
+let whichZomFrame= int( map(bass, 0,100,0,4));
 
 console.log(whichZomFrame)
 image(ZWave[whichZomFrame], 0,0); //ZWave animation
 
 
-for(var i=1; i < 6; i++){
-  var circlestep = i*240;
+
+fill(96, 32, 8, 100)
+noStroke();
+
+
+ellipse(1000, 400, sunSize)
+ellipse(100, 100, sunSize)
+ellipse(100, 560, sunSize)
+ellipse(600, 660, sunSize)
+ellipse(900, 600, sunSize)
+ellipse(800, 200, sunSize)
+ellipse(1100, 100, sunSize)
+ellipse(1200, 700, sunSize)
+
+for(var i=1; i < 5; i++){
+  var circlestep = i*300;
   ellipse(circlestep,sunY,sunSize)
 sunY = sunY +1
-
 if(sunY > 1000){
 sunY = 0
 
