@@ -14,7 +14,10 @@ let ZWave = [];
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-
+  if(firstRun){
+  scene = loadImage('Behind.png')
+  }
+  
   if(firstRun){
    scene = loadImage('ZWave/ZWave.1.png')
 
@@ -38,9 +41,9 @@ bgCol = map(bass,0, 100,100, 255)//Background colour
  
   fill(changingColor); // changes from Green to Black
   
-rect(0, 500, 2000, 400)//Road
-fill (136,136,128)
-rect(0, 20, 100, 800)
+//rect(0, 500, 2000, 400)//Road
+//fill (136,136,128)
+//rect(0, 20, 100, 800)
 //ZWave = map (bass)
 //let slowbass = ZWave (bass / 60)
 let whichZomFrame= int( map(bass, 0,100,0,4));
