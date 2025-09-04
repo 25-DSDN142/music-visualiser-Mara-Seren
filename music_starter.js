@@ -2,8 +2,8 @@
 let sunY =200;
 let sunSize;
 let bgCol
-let Green = [108, 148, 87];
-let Black = [0, 0, 0];
+let BGrey = [136,136,128];
+let Grey = [168,160,144];
 let lerpAMT = (1)
 let firstRun = true;
 let scene;
@@ -28,7 +28,7 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
  
 
 lerpAMT = map(other, 0, 100, 1,0)
-let changingColor = lerpColor (color(Green), color(Black), lerpAMT,)//Circle colours
+let changingColor = lerpColor (color(BGrey), color(Grey), lerpAMT,)//Circle colours
 
   background(108, 123, bgCol)//Background colour
  
@@ -37,7 +37,10 @@ sunSize = map(drum, 0, 400,40, 200)
 bgCol = map(bass,0, 100,100, 255)//Background colour
  
   fill(changingColor); // changes from Green to Black
-
+  
+rect(0, 500, 2000, 400)//Road
+fill (136,136,128)
+rect(0, 20, 100, 800)
 //ZWave = map (bass)
 //let slowbass = ZWave (bass / 60)
 let whichZomFrame= int( map(bass, 0,100,0,4));
