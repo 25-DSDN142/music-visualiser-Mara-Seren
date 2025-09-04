@@ -8,15 +8,15 @@ let lerpAMT = (1)
 let firstRun = true;
 let scene;
 let ZWave = [];
-
+let myImage;
+let myImage2;
 //const myElement = document.getElementById('ellipse');
 
 
 // vocal, drum, bass, and other are volumes ranging from 0 to 100
 function draw_one_frame(words, vocal, drum, bass, other, counter) {
-  if(firstRun){
-  scene = loadImage('Behind.png')
-  }
+
+
   
   if(firstRun){
    scene = loadImage('ZWave/ZWave.1.png')
@@ -25,6 +25,8 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
    ZWave.push(loadImage('ZWave/ZWave.2.png'))
     ZWave.push(loadImage('ZWave/ZWave.3.png'))
      ZWave.push(loadImage('ZWave/ZWave.4.png'))
+     myImage = loadImage('Behind.png')
+     myImage2 = loadImage('Infront.png')
    firstRun = false;
     
   }
@@ -41,16 +43,14 @@ bgCol = map(bass,0, 100,100, 255)//Background colour
  
   fill(changingColor); // changes from Green to Black
   
-//rect(0, 500, 2000, 400)//Road
-//fill (136,136,128)
-//rect(0, 20, 100, 800)
-//ZWave = map (bass)
-//let slowbass = ZWave (bass / 60)
+image(myImage,0,0)
+
 let whichZomFrame= int( map(bass, 0,100,0,4));
 
 console.log(whichZomFrame)
 image(ZWave[whichZomFrame], 0,0); //ZWave animation
 
+image(myImage2,0,0)
 
 
 fill(96, 32, 8, 100)
