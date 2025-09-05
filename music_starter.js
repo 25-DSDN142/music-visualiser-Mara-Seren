@@ -10,6 +10,8 @@ let scene;
 let ZWave = [];
 let myImage;
 let myImage2;
+let scene2;
+let WondaZ = [];
 //const myElement = document.getElementById('ellipse');
 
 
@@ -20,13 +22,19 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
   
   if(firstRun){
    scene = loadImage('ZWave/ZWave.1.png')
+   scene2 = loadImage('WondaZ/WondaZ1.png')
 
   ZWave.push(loadImage('ZWave/ZWave.1.png'))
    ZWave.push(loadImage('ZWave/ZWave.2.png'))
     ZWave.push(loadImage('ZWave/ZWave.3.png'))
      ZWave.push(loadImage('ZWave/ZWave.4.png'))
+
      myImage = loadImage('Behind.png')
      myImage2 = loadImage('Infront.png')
+
+  WondaZ.push(loadImage('WondaZ/WondaZ1.png')) 
+   WondaZ.push(loadImage('WondaZ/WondaZ2.png'))  
+
    firstRun = false;
     
   }
@@ -49,6 +57,11 @@ let whichZomFrame= int( map(bass, 0,100,0,4));
 
 console.log(whichZomFrame)
 image(ZWave[whichZomFrame], 0,0); //ZWave animation
+
+let whichWonFrame= int( map(vocal, 0,100,0,4));
+
+console.log(whichWonFrame)
+image(WondaZ[whichWonFrame], 0,0); //wonda zombie animation
 
 image(myImage2,0,0)
 
