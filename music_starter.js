@@ -56,7 +56,7 @@ bgCol = map(bass,0, 100,100, 255)//Background colour
 fill(107, 61, 52)
 rect(0, dustSize, 4000,)
 
-  fill(changingColor); // changes from Green to Black
+  fill(changingColor); 
   
 image(myImage,0,0)
 
@@ -107,7 +107,6 @@ if(sunY > 1000){
 sunY = 0
 
 }
-//console.log(sunY)
 }
   var wallstep = i*300;
   rect(wallstep,dustY,dustSize)
