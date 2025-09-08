@@ -12,6 +12,8 @@ let myImage;
 let myImage2;
 let scene2;
 let WondaZ = [];
+let dustY =400;
+let dustSize;
 //const myElement = document.getElementById('ellipse');
 
 
@@ -45,24 +47,26 @@ let changingColor = lerpColor (color(BGrey), color(Grey), lerpAMT,)//Circle colo
 
   background(108, 46, bgCol)//Background colour
  
-sunSize = map(drum, 0, 8000,20, 200)
+sunSize = map(drum, 0, 400,20, 200)
+
+dustSize = map(bass,0, 40, 200, 400)
 
 bgCol = map(bass,0, 100,100, 255)//Background colour
 
-fill(168,160,144, 94)
-rect(0, 400, 4000,)
+fill(107, 61, 52)
+rect(0, dustSize, 4000,)
 
   fill(changingColor); // changes from Green to Black
   
 image(myImage,0,0)
 
 let slowcounter =counter / 80
-let whichZomFrame= int(slowcounter %4);
+let whichZomFrame= int(slowcounter %2);
 
 console.log(whichZomFrame)
 image(ZWave[whichZomFrame], 0,0); //ZWave animation
 
-let whichWonFrame2= int( map(bass, 0, 100,0, 2));
+let whichWonFrame2= int( map(vocal, 0, 100, 0, 2));
 
 console.log(whichWonFrame2)
 image(WondaZ[whichWonFrame2], 0,0); //wonda zombie animation
@@ -70,7 +74,7 @@ image(WondaZ[whichWonFrame2], 0,0); //wonda zombie animation
 image(myImage2,0,0)
 
 
-fill(168,160,144, 50)
+fill(168,160,144, 60)
 noStroke();
 
 
@@ -105,5 +109,10 @@ sunY = 0
 }
 //console.log(sunY)
 }
+  var wallstep = i*300;
+  rect(wallstep,dustY,dustSize)
+dustY = dustY +1
+
+
 }
   
