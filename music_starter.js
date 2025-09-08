@@ -43,30 +43,34 @@ function draw_one_frame(words, vocal, drum, bass, other, counter) {
 lerpAMT = map(other, 0, 100, 1,0)
 let changingColor = lerpColor (color(BGrey), color(Grey), lerpAMT,)//Circle colours
 
-  background(108, 123, bgCol)//Background colour
+  background(108, 46, bgCol)//Background colour
  
-sunSize = map(drum, 0, 400,40, 200)
+sunSize = map(drum, 0, 8000,20, 200)
 
 bgCol = map(bass,0, 100,100, 255)//Background colour
- 
+
+fill(168,160,144, 94)
+rect(0, 400, 4000,)
+
   fill(changingColor); // changes from Green to Black
   
 image(myImage,0,0)
 
-let whichZomFrame= int( map(bass, 0,100,0,4));
+let slowcounter =counter / 80
+let whichZomFrame= int(slowcounter %4);
 
 console.log(whichZomFrame)
 image(ZWave[whichZomFrame], 0,0); //ZWave animation
 
-let whichWonFrame= int( map(vocal, 0,100,0,4));
+let whichWonFrame2= int( map(bass, 0, 100,0, 2));
 
-console.log(whichWonFrame)
-image(WondaZ[whichWonFrame], 0,0); //wonda zombie animation
+console.log(whichWonFrame2)
+image(WondaZ[whichWonFrame2], 0,0); //wonda zombie animation
 
 image(myImage2,0,0)
 
 
-fill(96, 32, 8, 100)
+fill(168,160,144, 50)
 noStroke();
 
 
@@ -78,6 +82,18 @@ ellipse(900, 600, sunSize)
 ellipse(800, 200, sunSize)
 ellipse(1100, 100, sunSize)
 ellipse(1200, 700, sunSize)
+ellipse(300, 200, sunSize)
+ellipse(400, 700, sunSize)
+ellipse(800, 1000, sunSize)
+ellipse(600, 600, sunSize)
+ellipse(200, 50, sunSize)
+ellipse(300, 60, sunSize)
+ellipse(200, 700, sunSize)
+ellipse(400, 80, sunSize)
+ellipse(500, 200, sunSize)
+ellipse(600, 100, sunSize)
+ellipse(600, 400, sunSize)
+
 
 for(var i=1; i < 5; i++){
   var circlestep = i*300;
